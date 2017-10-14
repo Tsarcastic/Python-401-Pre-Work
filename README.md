@@ -1,1 +1,2 @@
 # Python-401-Pre-Work
+I completed the Codecademy Python tutorial prior to this class (even the later units). However Codecademy seems to have lost all my answers and won't check any new ones in my account. I've tried my best to duplicate the answers but some info might be missing.
