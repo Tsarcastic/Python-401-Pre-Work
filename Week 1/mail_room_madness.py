@@ -9,6 +9,7 @@ def mail_room():
         print("1: Process a Donation & Send a Thank You")
         print("2: Create a Report")
         print("3. Quit this program")
+        print("(Enter 'q' at any time to return to this menu.)")
         reply = int(input("1 or 2?")) #Input
         if reply == 1:
             add_amount()
@@ -21,14 +22,19 @@ def mail_room():
 def add_amount():
     amount = ""
     name = input("Enter the donor's name: ") #Input
+    if name == "q":
+        return
     while not amount.isdigit():
         amount = input("Enter their donation: ") #Input
+        if amount == "q":
+            return
     if name in donors_amt:
         donors_amt[name] += amount
         donors_ct[name] += 1
     else: 
         donors_amt[name] = amount
         donors_ct[name] = 1
+    print_letter()
 
 """This will print out the report"""   
 def report():
@@ -36,7 +42,8 @@ def report():
     for donor in donors_amt:
         print("\t{}\t\t{}\t${}\t${}".format(donor,donors_ct[donor], donors_amt[donor], donors_amt[donor]/donors_ct[donor] ))
 
-def print_letter():
+#def print_letter():
+    
     #This is where we'll print the letter
 
 
